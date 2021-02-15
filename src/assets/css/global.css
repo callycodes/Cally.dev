@@ -1,0 +1,29 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+@import url(//db.onlinewebfonts.com/c/7ba11ef44fcc3efa68a7eae701e934dd?family=Noe+Display+Black);
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+  
+
+:root {
+  --royal-blue: #0b2a90;
+  --golden-yellow: #fec049;
+  --indigo-blue: #004777;
+  --prussian-blue: #003152;
+  
+}
+
+@font-face {font-family: "Noe Display Black"; src: url("//db.onlinewebfonts.com/t/7ba11ef44fcc3efa68a7eae701e934dd.eot"); src: url("//db.onlinewebfonts.com/t/7ba11ef44fcc3efa68a7eae701e934dd.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/7ba11ef44fcc3efa68a7eae701e934dd.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/7ba11ef44fcc3efa68a7eae701e934dd.woff") format("woff"), url("//db.onlinewebfonts.com/t/7ba11ef44fcc3efa68a7eae701e934dd.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/7ba11ef44fcc3efa68a7eae701e934dd.svg#Noe Display Black") format("svg"); }
+
+.font-logo {
+  font-family: 'Noe Display Black', sans-serif;
+  text-align: left;
+  line-height: 32px;
+}
+
+.font-roboto {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.font-title {
+  font-family: 'Hammersmith One', sans-serif;
+}

@@ -25,23 +25,23 @@
       </div>
 
       <div class="profile-container">
-        <span class="text-sm-right float-sm-right font-oswald fw-700 fs-50 fc-persian-green">LONDON BASED, GRADUATED <span class="fs-70 fc-burnt-sienna">2021</span></span>
+        <div class="location-container">
+          
+        <span class="d-block font-oswald fw-700 fs-50 fc-persian-green">LONDON BASED, GRADUATED <span class="fs-70 fc-burnt-sienna">2021</span></span>
 
-        <span style="line-height: 0px;" class="d-none d-xl-block mt-0 float-lg-right font-roboto-slab fw-900 fs-20 fc-sandy-brown">university of westminster baby</span>
-      
+        <span style="position: relative; top: -20px;" class="d-none d-lg-block mt-0 float-lg-right font-roboto-slab fw-900 fs-20 fc-sandy-brown">university of westminster baby</span>
+      </div>
       <div class="clearfix"></div>
         <div class="more-info-container">
-<span class="font-pressura">AGE:<span style="background: -webkit-linear-gradient(var(--charcoal), var(--persian-green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">21</span></span>
+<span class="age-text font-pressura">AGE:<span style="background: -webkit-linear-gradient(var(--charcoal), var(--persian-green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">21</span></span>
 <br>
-<span class="fc-skobeloff font-oswald fs-20">SCROLL DOWN TO SEE WHAT I'VE DONE</span>
+<span class="scroll-text fc-skobeloff font-oswald fs-20">SCROLL DOWN TO SEE WHAT I'VE DONE</span>
         </div>
       </div>
         
       </div>
       </div>
     </div>
-
-<div class="clearfix"></div>
 
 <Portfolio/>
 
@@ -64,8 +64,24 @@ export default {
 <style scoped>
 
 
+.clearfix {
+  overflow: auto;
+}
+
 #home {
   margin-top: 40px;
+}
+
+.age-text {
+  font-size: 16vh;
+  letter-spacing: -3px;
+  line-height: 62px;
+
+}
+
+.scroll-text {
+  position: relative;
+  top: -3%;
 }
 
 .title-text-container {
@@ -124,7 +140,7 @@ export default {
 
 .my-name-container {
   margin-left: 40px;
-  height: 120px;
+  height: 100px;
   
 }
 
@@ -132,11 +148,16 @@ export default {
   margin-left: 40px;
 }
 
+.location-container {
+  line-height: 60px;
+text-align: right;
+}
+
 .profile-container .more-info-container {
   width: 100%;
   background-color: var(--charcoal);
   margin-top: 70px;
-  height: 134px;
+  height: 169px;
   text-align: center;
 }
 
@@ -156,6 +177,14 @@ export default {
 }
 
 @media (max-width: 978px) {
+
+  .age-text {
+  font-size: 12vh;
+  letter-spacing: -3px;
+  line-height: 62px;
+
+}
+
   .my-name-container {
     margin-left: 0px;
     text-align: left;

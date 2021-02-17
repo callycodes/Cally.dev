@@ -19,7 +19,7 @@ export default {
 <style>
 #app {
   padding: 60px;
-  
+  overflow-x: hidden;
   
 }
 </style>

@@ -17,6 +17,10 @@
       <span class="font-roboto">Contact</span>
       </div>
 
+      <div class="d-flex flex-column">
+      <span class="font-roboto">LinkedIn</span>
+      </div>
+
     </div>
 
   </div>
@@ -56,7 +60,7 @@ export default {
 }
 
 .font-roboto:hover {
-  background-color:#2A9D8F;
+  background-color:var(--sandy-brown);
 }
 
 </style>

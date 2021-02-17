@@ -1,18 +1,57 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
 @import url(//db.onlinewebfonts.com/c/7ba11ef44fcc3efa68a7eae701e934dd?family=Noe+Display+Black);
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-  
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;900&display=swap');
 
 :root {
-  --royal-blue: #0b2a90;
-  --golden-yellow: #fec049;
-  --indigo-blue: #004777;
-  --prussian-blue: #003152;
-  
+  --charcoal: #264653;
+  --persian-green: #2A9D8F;
+  --orange-yellow-crayola: #E9C46A;
+  --sandy-brown: #F4A261;
+  --burnt-sienna: #E76F51;
+  --asparagus: #8AB17D;
+  --skobeloff: #287271;
 }
 
+@import url(//db.onlinewebfonts.com/c/f0968336c01fbfad47f8a946b3b8e0cb?family=GT+Pressura+Mono+Bold);
+@font-face {font-family: "GT Pressura Mono Bold"; src: url("//db.onlinewebfonts.com/t/f0968336c01fbfad47f8a946b3b8e0cb.eot"); src: url("//db.onlinewebfonts.com/t/f0968336c01fbfad47f8a946b3b8e0cb.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/f0968336c01fbfad47f8a946b3b8e0cb.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/f0968336c01fbfad47f8a946b3b8e0cb.woff") format("woff"), url("//db.onlinewebfonts.com/t/f0968336c01fbfad47f8a946b3b8e0cb.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/f0968336c01fbfad47f8a946b3b8e0cb.svg#GT Pressura Mono Bold") format("svg"); }
+
 @font-face {font-family: "Noe Display Black"; src: url("//db.onlinewebfonts.com/t/7ba11ef44fcc3efa68a7eae701e934dd.eot"); src: url("//db.onlinewebfonts.com/t/7ba11ef44fcc3efa68a7eae701e934dd.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/7ba11ef44fcc3efa68a7eae701e934dd.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/7ba11ef44fcc3efa68a7eae701e934dd.woff") format("woff"), url("//db.onlinewebfonts.com/t/7ba11ef44fcc3efa68a7eae701e934dd.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/7ba11ef44fcc3efa68a7eae701e934dd.svg#Noe Display Black") format("svg"); }
+@font-face {font-family: "GT Pressura Bold"; src: url("/fonts/GT-Pressura-Bold.otf") format("opentype"); }
+
+.fc-charcoal {
+  color: var(--charcoal);
+}
+
+.fc-skobeloff {
+  color: var(--skobeloff);
+}
+
+.fc-asparagus {
+  color: var(--asparagus);
+}
+
+.fc-persian-green {
+  color: var(--persian-green);
+}
+
+.fc-orange-yellow-crayola {
+  color: var(--orange-yellow-crayola);
+}
+
+.fc-sandy-brown {
+  color: var(--sandy-brown);
+}
+
+.fc-burnt-sienna {
+  color: var(--burnt-sienna);
+}
+
 
 .font-logo {
   font-family: 'Noe Display Black', sans-serif;
@@ -20,8 +59,80 @@
   line-height: 32px;
 }
 
+.font-roboto-slab {
+  font-family: 'Roboto Slab', serif;
+}
+
+.font-pressura {
+  font-family: 'GT Pressura Mono Bold', sans-serif;
+  font-weight: 900;
+  font-size: 150px;
+  letter-spacing: -3px;
+  line-height: 62px;
+}
+
 .font-roboto {
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto Mono', serif;
+}
+
+.font-oswald {
+  font-family: 'Oswald', sans-serif;
+}
+
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.f-italic {
+  font-style: italic;
+}
+
+.fw-900 {
+  font-weight: 900;
+}
+
+.fw-800 {
+  font-weight: 800;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+
+.fs-50 {
+  font-size: 50px;
+}
+
+.fs-40 {
+  font-size: 40px;
+}
+
+.fs-30 {
+  font-size: 30px;
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+.fs-15 {
+  font-size: 15px;
 }
 
 .font-title {

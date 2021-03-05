@@ -11,7 +11,9 @@
       <div class="info-container d-block d-lg-flex">
       <div class="my-photo-container d-flex">
         <img class="my-photo" src="../assets/img/me.jpg"/>
-        <div class="my-photo-text"><span class="font-montserrat fw-800">THIS IS ME</span></div>
+    
+        <div class="my-photo-text"><span class="font-montserrat fw-800 bounce">THIS IS ME</span></div>
+
       </div>
 
       <div class="about-me-container">
@@ -29,11 +31,11 @@
           
         <span class="d-block font-oswald fw-700 fs-50 fc-persian-green">LONDON BASED, GRADUATED <span class="fs-70 fc-burnt-sienna">2021</span></span>
 
-        <span style="position: relative; top: -20px;" class="d-none d-lg-block mt-0 float-lg-right font-roboto-slab fw-900 fs-20 fc-sandy-brown">university of westminster baby</span>
+        <span style="position: relative; top: -20px;" class="d-none d-lg-block mt-0 float-lg-right font-roboto-slab fw-900 fs-20 fc-sandy-brown">UNIVERSITY OF WESTMINSTER</span>
       </div>
       <div class="clearfix"></div>
         <div class="more-info-container">
-<span class="age-text font-pressura">AGE:<span style="background: -webkit-linear-gradient(var(--charcoal), var(--persian-green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">21</span></span>
+<span class="age-text font-pressura">OPENTO<span style="background: -webkit-linear-gradient(var(--charcoal), var(--persian-green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">EMPLOYMENT</span></span>
 <br>
 <span class="scroll-text fc-skobeloff font-oswald fs-20">SCROLL DOWN TO SEE WHAT I'VE DONE</span>
         </div>
@@ -73,7 +75,7 @@ export default {
 }
 
 .age-text {
-  font-size: 16vh;
+  font-size: 7.5vw;
   letter-spacing: -3px;
   line-height: 62px;
 
@@ -127,7 +129,7 @@ export default {
 }
 
 .my-photo-text > span {
-  writing-mode:vertical-rl;
+  writing-mode:vertical-lr;
   font-size: 15px;
   color: var(--sandy-brown);
 }
@@ -175,6 +177,25 @@ text-align: right;
 .my-study-photo {
   width: 100px;
 }
+
+
+
+.bounce {
+  animation: bounce-left-right 5s infinite;
+}
+
+@keyframes bounce-left-right {
+  0% {
+    margin-top: 0px;
+  }
+  50% {
+   margin-top: 130px;
+  }
+  100% {
+    margin-top: 0px;
+  }
+}
+
 
 @media (max-width: 978px) {
 

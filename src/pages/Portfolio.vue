@@ -3,26 +3,30 @@
 <div id="portfolio">
 
 
-  <img class="left-leaf" src="../assets/img/leaf.png"/>
+ <!--<img class="left-leaf" src="../assets/img/leaf.png"/>-->
 <transition name="project-preview">
 <div class="hovered-project-container"></div>
 </transition>
 
-  <div class="portfolio-isolayer scroll-obj">
+  <div class="portfolio-isolayer">
 
-    <div class="title-text-container">
+<div class="title-text-container">
         <div class="d-none d-lg-block text-block"/>
-        <h1 class="font-montserrat fw-900 fs-50">PORTFOLIO</h1>
+        <h1 class="font-montserrat fw-900">PORTFOLIO</h1>
       </div>
+
+<div class="border-layer portfolio-border">
+<div class="scroll-obj">
+    
       
-      <div class="portfolio-border">
+      <div class="">
       
     <div class="portfolio-grid">
       
       
       <b-row>
         
-  <b-col cols="12" lg="12" xl="6">
+  <b-col v-for="i in projects" :key="i" cols="12" lg="12" xl="6">
     <div class="portfolio-item" @mouseover="hovered_project = true" @mouseleave="hovered_project = false">
       <div class="container">
         <div class="name-links-container">
@@ -32,60 +36,17 @@
       </div>
   </b-col>
 
-   <b-col cols="12" lg="12" xl="6">
-    <div class="portfolio-item">
-      <div class="container">
-        <div class="name-links-container">
-          <h1 class="portfolio-title font-montserrat fw-900 fs-40">Project #1 here uis a really long title</h1>
-        </div>
-      </div>
-      </div>
-  </b-col>
+   
 
-  <b-col cols="12" lg="12" xl="6">
-    <div class="portfolio-item">
-      <div class="container">
-        <div class="name-links-container">
-          <h1 class="portfolio-title font-montserrat fw-900 fs-40">Project #1 here uis a really long title</h1>
-        </div>
-      </div>
-      </div>
-  </b-col>
-
-  <b-col cols="12" lg="12" xl="6">
-    <div class="portfolio-item">
-      <div class="container">
-        <div class="name-links-container">
-          <h1 class="portfolio-title font-montserrat fw-900 fs-40">Project #1 here uis a really long title</h1>
-        </div>
-      </div>
-      </div>
-  </b-col>
-
-  <b-col cols="12" lg="12" xl="6">
-    <div class="portfolio-item">
-      <div class="container">
-        <div class="name-links-container">
-          <h1 class="portfolio-title font-montserrat fw-900 fs-40">Project #1 here uis a really long title</h1>
-        </div>
-      </div>
-      </div>
-  </b-col>
-
-  <b-col cols="12" lg="12" xl="6">
-    <div class="portfolio-item">
-      <div class="container">
-        <div class="name-links-container">
-          <h1 class="portfolio-title font-montserrat fw-900 fs-40">Project #1 here uis a really long title</h1>
-        </div>
-      </div>
-      </div>
-  </b-col>
 
 </b-row>
 
       
     </div>
+    </div>
+
+    </div>
+
     </div>
   </div>
 
@@ -101,6 +62,7 @@ export default {
 
   data () {
     return {
+      projects: 10,
       hovered_project: false
     }
   }
@@ -142,15 +104,6 @@ export default {
   z-index: -1;
 }
 
-.hovered-project-container {
-  position: fixed;
-  right: -200px;
-  width: 200px;
-  height: 200px;
-  top: 50px;
-  display: none;
-
-}
 
 .portfolio-border {
   border-color: var(--charcoal);
@@ -171,20 +124,21 @@ export default {
 
 .portfolio-isolayer {
   position: relative;
-  top: -30vh;
-  left: -30vh;
-  
+  top: -50vh;
+  left: calc(100% - 130vw);
+  overflow-y: hidden;
   -webkit-transform-origin: 50% 100%;
   transform-origin: 50% 100%;
 
+transform : translateX(-15vw) translateY(275px) rotateX(45deg) rotateZ(45deg);
+  width: 100vw;
+  max-width: 2000px;
+	
 }
 
 .scroll-obj {
-
-  overflow-x: hidden;
-  transform : translateX(-15vw) translateY(275px) rotateX(45deg) rotateZ(45deg);
-  width: 100vw;
-	height: calc(120vh);
+  overflow-y: scroll;
+  height: calc(120vh);
 }
 
 .portfolio-grid,
@@ -242,6 +196,10 @@ export default {
   color: var(--skobeloff);
 }
 
+.title-text-container h1 {
+  font-size: 10vw;
+}
+
 
 .text-block {
   z-index: -1;
@@ -280,7 +238,7 @@ export default {
   }
 
   .portfolio-isolayer {
-  top: 40vh;
+  top:-20vh;
   left: -60vh;
   }
 }
@@ -288,7 +246,7 @@ export default {
 @media (max-width: 900px) {
 
   .portfolio-isolayer {
-  top: 30vh;
+  top: 10vh;
   left: -60vh;
   }
 }
@@ -297,7 +255,7 @@ export default {
 
   
   .portfolio-isolayer {
-  top: 0vh;
+  top: 00vh;
   left: -60vh;
   }
 }

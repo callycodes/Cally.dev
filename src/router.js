@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from './pages/Home.vue'
+import Boggle from './pages/projects/Boggle.vue'
 
 Vue.use(VueRouter)
 
@@ -12,7 +13,14 @@ const router = new VueRouter({
     path: '/',
     name: 'Home',
     component: Home
-  }
+  },
+
+  {
+    path: '/boggle',
+    name: 'Boggle',
+    component: Boggle
+  },
+
   ]
   /* ,
   {

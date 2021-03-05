@@ -151,7 +151,6 @@ transform : translateX(-15vw) translateY(275px) rotateX(45deg) rotateZ(45deg);
 }
 
 .portfolio-grid {
-  padding-top: calc(100%-100vh);
   width: 100%;
   height: auto;
 }

@@ -1,7 +1,7 @@
 <template>
   <div id="home">
 
-    <div id="intro" class="d-block">
+    
 
       <div class="title-text-container">
         <div class="d-none d-lg-block text-block"/>
@@ -12,40 +12,14 @@
       <div class="my-photo-container d-flex">
         <img class="my-photo" src="../assets/img/me.jpg"/>
     
-        <div class="my-photo-text"><span class="font-montserrat fw-800 bounce">THIS IS ME</span></div>
+        <div class="my-photo-text"><span class="font-oswald">LATVIA, 2020</span></div>
 
       </div>
 
-      <div class="about-me-container">
-        <div class="my-name-container">
-          <div class="d-flex mb-0 pb-0">
-            <h1 class="my-name font-montserrat fw-900 fs-40">Callum Bass</h1>
-            <b-icon class="about-me-icon" icon="instagram"></b-icon>
-          </div>
-          <!--<span class="fs-15 font-montserrat f-italic fw-400 about-me-pronounce">pronounced: your·<b class="fw-700">finest</b>·graduate</span>-->
-          <span class="course-text fs-15 font-roboto fw-900 fc-sandy-brown">SOFTWARE ENGINEERING BENG</span>
       </div>
 
-      <div class="profile-container">
-        <div class="location-container">
-          
-        <span class="d-block font-oswald fw-700 fs-50 fc-persian-green">LONDON BASED, GRADUATED <span class="fs-70 fc-burnt-sienna">2021</span></span>
+      <button @click="showPopup">Dismissable</button>
 
-        <span style="position: relative; top: -20px;" class="d-none d-lg-block mt-0 float-lg-right font-roboto-slab fw-900 fs-20 fc-sandy-brown">UNIVERSITY OF WESTMINSTER</span>
-      </div>
-      <div class="clearfix"></div>
-        <div class="more-info-container">
-<span class="age-text font-pressura">OPENTO<span style="background: -webkit-linear-gradient(var(--charcoal), var(--persian-green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">EMPLOYMENT</span></span>
-<br>
-<span class="scroll-text fc-skobeloff font-oswald fs-20">SCROLL DOWN TO SEE WHAT I'VE DONE</span>
-        </div>
-      </div>
-        
-      </div>
-      </div>
-    </div>
-
-<Portfolio/>
 
   </div>
   
@@ -53,11 +27,39 @@
 
 <script>
 
-import Portfolio from './Portfolio.vue'
-
 export default {
   components: {
-    Portfolio
+  },
+
+  methods: {
+    showPopup() {
+      this.$store.dispatch('showPopup', { title: 'Github', description: 'This is the description', url: 'http://github.com'});
+    },
+  },
+
+  data () {
+    return {
+      items: [
+        {
+          url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/694px-Vue.js_Logo_2.svg.png'
+        },
+        {
+          url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/768px-Python-logo-notext.svg.png'
+        },
+        {
+          url: 'https://www.blockachain.gr/wp-content/uploads/2018/03/java-coffee-cup-logo.png'
+        },
+        {
+          url: 'https://cdn.worldvectorlogo.com/logos/c--4.svg'
+        },
+        {
+          url: 'https://i.pinimg.com/originals/8f/50/63/8f50630ae0e1775196e4c270c573ce67.png'
+        },
+        {
+          url: 'https://cdn.freebiesupply.com/logos/large/2x/flask-logo-png-transparent.png'
+        }
+      ]
+    }
   }
 
 }
@@ -74,17 +76,8 @@ export default {
   margin-top: 40px;
 }
 
-.age-text {
-  font-size: 7.5vw;
-  letter-spacing: -3px;
-  line-height: 62px;
 
-}
 
-.scroll-text {
-  position: relative;
-  top: -3%;
-}
 
 .title-text-container {
   position: relative;
@@ -102,13 +95,13 @@ export default {
 }
 
 .my-photo {
-  height: 400px;
+  height: 300px;
 }
 
 .my-photo-text {
   background-color: var(--charcoal);
   padding: 10px;
-  max-height: 400px;
+  height: auto;
 }
 
 .course-text {
@@ -129,9 +122,9 @@ export default {
 }
 
 .my-photo-text > span {
-  writing-mode:vertical-lr;
+  writing-mode:vertical-rl;
   font-size: 15px;
-  color: var(--sandy-brown);
+  color: var(--asparagus);
 }
 
 .about-me-container {
@@ -146,33 +139,6 @@ export default {
   
 }
 
-.profile-container {
-  margin-left: 40px;
-}
-
-.location-container {
-  line-height: 60px;
-text-align: right;
-}
-
-.profile-container .more-info-container {
-  width: 100%;
-  background-color: var(--charcoal);
-  margin-top: 70px;
-  height: 169px;
-  text-align: center;
-}
-
-.about-me-icon {
-  font-size: 25px;
-  color: var(--sandy-brown);
-  margin-top: 13px;
-  margin-left: 10px;
-}
-
-.about-me-pronounce {
-  color: var(--burnt-sienna);
-}
 
 .my-study-photo {
   width: 100px;
@@ -180,55 +146,10 @@ text-align: right;
 
 
 
-.bounce {
-  animation: bounce-left-right 5s infinite;
-}
-
-@keyframes bounce-left-right {
-  0% {
-    margin-top: 0px;
-  }
-  50% {
-   margin-top: 130px;
-  }
-  100% {
-    margin-top: 0px;
-  }
-}
 
 
-@media (max-width: 978px) {
 
-  .age-text {
-  font-size: 12vh;
-  letter-spacing: -3px;
-  line-height: 62px;
 
-}
-
-  .my-name-container {
-    margin-left: 0px;
-    text-align: left;
-    height: 120px;
-  }
-
-  .profile-container {
-    margin-left: 0px;
-    text-align: right;
-    line-height: 40px;
-  }
-
-  .my-photo {
-  height: auto;
-  width: calc(100% - 40px);
-  margin-bottom: 20px;
-}
-
-.my-photo-text {
-  height: 100%;
-  max-height: 100%;
-}
-}
 
 
 </style>

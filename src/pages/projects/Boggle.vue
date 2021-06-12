@@ -98,7 +98,7 @@ export default {
       shaking: false,
       rotating: false,
       direction: null,
-      timeLimit: 20,
+      timeLimit: 150,
       timePassed: 0,
       timerInterval: null,
       timerPaused: true

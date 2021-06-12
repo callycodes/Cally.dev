@@ -7,7 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
 :root {
   --charcoal: #264653;
   --persian-green: #2A9D8F;
@@ -26,6 +26,10 @@
 
 .fc-charcoal {
   color: var(--charcoal);
+}
+
+.fc-black {
+  color: black;
 }
 
 .fc-skobeloff {
@@ -134,4 +138,37 @@
 
 .font-title {
   font-family: 'Hammersmith One', sans-serif;
+}
+
+
+.block-container {
+  padding: 5px;
+  padding-left: 20px;
+  background-color: black;
+}
+
+.block-container span {
+  color: white;
+  font-weight: 900;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.mt-one {
+  margin-top: 5px;
+}
+.mt-two {
+  margin-top: 10px;
+}
+
+.mt-three {
+  margin-top: 20px;
+}
+
+.mt-five {
+  margin-top: 50px;
 }

@@ -16,10 +16,12 @@
 
       </div>
 
+      <div class="my-name">
+        <h2 class="font-oswald">MY NAME IS CALLUM<br>I'M A SOFTWARE ENGINEERING STUDENT<br>BASED IN LONDON</h2>
       </div>
 
-      <button @click="showPopup">Dismissable</button>
 
+      </div>
 
   </div>
   
@@ -72,15 +74,34 @@ export default {
   overflow: auto;
 }
 
+.color-block {
+  height: auto;
+  background-color: red;
+  width: 100%;
+  float: left;
+}
 #home {
   margin-top: 40px;
 }
 
 
+.my-name {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  color: black;
+  float: left;
+  width: 100%;
+  height: auto;
+  background-color: blue;
+}
 
+.my-name h2 {
+  font-size: 4.8vw;
+}
 
 .title-text-container {
   position: relative;
+  transition: all 1s;
 }
 
 
@@ -94,8 +115,13 @@ export default {
   background-color: var(--persian-green);
 }
 
+.my-photo-container {
+  margin-right: 40px;
+  max-height: 450px;
+  margin-bottom: 40px;
+}
 .my-photo {
-  height: 300px;
+  height: 450px;
 }
 
 .my-photo-text {
@@ -109,16 +135,10 @@ export default {
   padding: 5px;
 }
 
-.my-name {
-  padding-bottom: 0px;
-  margin-bottom: 0px;
-  color: var(--charcoal);
-}
 
 
 .info-container {
   margin-top: 50px;
-  max-height: 400px;
 }
 
 .my-photo-text > span {
@@ -133,11 +153,6 @@ export default {
   
 }
 
-.my-name-container {
-  margin-left: 40px;
-  height: 100px;
-  
-}
 
 
 .my-study-photo {

@@ -6,6 +6,8 @@
         <h1 class="font-montserrat fw-900 fs-50">Blog</h1>
       </div>
 
+      <h2 class="font-oswald fs-50">Work in progress!</h2>
+
   </div>
 </template>
 
@@ -29,6 +31,11 @@
   width: 600px;
   height: 30px;
   background-color: var(--persian-green);
+}
+
+h2 {
+  margin-top: 10vh;
+  text-align: center;
 }
 
 </style>

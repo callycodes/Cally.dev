@@ -51,6 +51,7 @@ export default {
   transform: translate(-50%, -50%);
   padding: 20px;
   text-align: center;
+  z-index: 10;
 }
 
 button {

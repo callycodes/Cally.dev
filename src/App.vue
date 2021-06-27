@@ -33,10 +33,20 @@ export default {
     Top,
     Dismissable
   },
+  created () {
+    window.addEventListener('resize', this.handleResize);
+        this.handleResize();
+    },
+    destroyed() {
+        window.removeEventListener('resize', this.handleResize);
+    },
   methods: {
     popupShown() {
       return this.$store.state.popup_shown;
-    }
+    },
+    handleResize() {
+            this.$store.dispatch('setWindow', { width: window.innerWidth, height: window.innerHeight});
+        }
   },
   data () {
     return {

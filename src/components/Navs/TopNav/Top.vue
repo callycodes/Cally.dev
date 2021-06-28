@@ -13,7 +13,7 @@
 
       <div class="d-flex flex-column">
       <a @click="showPopup('http://github.com/callycodes', 'Github', 'Check out some of my other projects on my Github!')"><span class="font-roboto">Github</span></a>
-      <a @click="showPopup('/CV_compressed.pdf', 'CV', 'If you have any issues with my CV, drop me a message on LinkedIn and I can provide a different format :)')"><span class="font-roboto">CV</span></a>
+      <a @click="showPopup('/CV.pdf', 'CV', 'If you have any issues with my CV, drop me a message on LinkedIn and I can provide a different format :)')"><span class="font-roboto">CV</span></a>
       <router-link to="/contact"><span class="font-roboto">Contact</span></router-link>
       </div>
 

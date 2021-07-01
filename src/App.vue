@@ -59,6 +59,12 @@ export default {
 </script>
 
 <style>
+
+body {
+  overflow-x: hidden;
+  }
+
+  
 #app {
   padding: 60px;
   overflow-x: hidden;

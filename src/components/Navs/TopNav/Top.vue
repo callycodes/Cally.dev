@@ -77,7 +77,7 @@ transition: all .5s;
   top: 24px;
   left: 13px;
   width: 50px;
-  height: 3px;
+  height: 4px;
   background-color: black;
   transition: all .5s;
 }
@@ -87,7 +87,7 @@ transition: all .5s;
   top: 34px;
   left: 13px;
   width: 50px;
-  height: 3px;
+  height: 4px;
   background-color: black;
   transition: all .5s;
 }
@@ -97,7 +97,7 @@ transition: all .5s;
   top: 44px;
   left: 13px;
   width: 50px;
-  height: 3px;
+  height: 4px;
   background-color: black;
   transition: all .5s;
 }

@@ -122,7 +122,7 @@ export default {
 .project-description {
   margin-top: 2vw;
   position: absolute;
-  height: 20vh;
+  height: 18vh;
   top: 56vh;
   left: 0px;
   margin: 5vw;

@@ -107,7 +107,7 @@ margin-right: 0px;
 }
 
 .projects-item {
-  background-color: red;
+  background-color: var(--charcoal);
   height: 250px;
   border-radius: 2px;
   z-index: 1;

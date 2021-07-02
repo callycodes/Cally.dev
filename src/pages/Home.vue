@@ -1,6 +1,7 @@
 <template>
   <div id="home">
 
+<ContactMe></ContactMe>
 
       <svg class="title-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
   <path d="M47,-75.9C58.9,-65.4,65.3,-49.1,64.8,-34.2C64.4,-19.4,57.1,-6.1,54.7,7.6C52.3,21.3,54.7,35.4,50.7,49.1C46.8,62.8,36.5,76,22.8,82C9.2,87.9,-7.9,86.5,-21.3,79.4C-34.6,72.3,-44.2,59.5,-51.8,47C-59.3,34.5,-64.7,22.3,-64.5,10.5C-64.4,-1.3,-58.6,-12.7,-50.5,-20.1C-42.5,-27.5,-32.3,-30.9,-23.5,-42.7C-14.7,-54.6,-7.3,-75,5.1,-83C17.5,-90.9,35,-86.3,47,-75.9Z" transform="translate(100 100)" />
@@ -66,8 +67,11 @@
 
 <script>
 
+import ContactMe from '../components/Fixed/ContactMe.vue'
+
 export default {
   components: {
+    ContactMe
   },
 
   created () {
@@ -126,6 +130,7 @@ export default {
   height: 500px;
   transform: rotate(70deg);
   z-index: -1;
+  transition: all 1s;
   }
 
 .scroll-down-container {
@@ -153,7 +158,7 @@ export default {
       line-height: 40px;
       color: white;
       text-shadow:3px 0 0 black,0 3px 0 black,-3px 0 0 black,0 -3px 0 black;
-      }
+    }
 
 
 
@@ -276,6 +281,13 @@ margin-top: 20px;
     top: 65vh;
     width: 220px;
     }
+
+    .title-blob {
+        top: 30px;
+  left: -50px;
+  width: 400px;
+  height: 200px;
+      }
 }
 
 @media (min-width: 1400px) {

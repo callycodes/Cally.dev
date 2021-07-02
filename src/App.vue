@@ -26,6 +26,8 @@
 <script>
 import Dismissable from './components/Dismissable.vue'
 import Top from './components/Navs/TopNav/Top'
+//import { interpret } from 'xstate';
+//import { scrollMachine } from './states/scrollMachine';
 
 export default {
   name: 'App',
@@ -33,14 +35,39 @@ export default {
     Top,
     Dismissable
   },
+ 
   created () {
+
+    /*this.scrollService
+      .onTransition(state => {
+        this.current = state;
+      })
+      .start();*/
+
+      window.addEventListener('scroll', this.handleScroll);
+
     window.addEventListener('resize', this.handleResize);
         this.handleResize();
     },
     destroyed() {
+      window.removeEventListener('scroll', this.handleScroll);
         window.removeEventListener('resize', this.handleResize);
     },
   methods: {
+    handleScroll (event) {
+      console.log(event);
+      this.$store.dispatch('setScrolling', { scrolled: true, timestamp: event.timestamp } );
+
+      window.clearTimeout(this.isScrolling);
+
+      this.isScrolling = setTimeout(() => {
+
+        if (this.$store.state.scrolling.scrolled && this.$store.state.scrolling.timestamp === event.timestamp) {
+          this.$store.dispatch('setScrolling', { scrolled: false, timestamp: 0 });
+          console.log('scrolling hss ended');
+        }
+      }, 4000);
+    },
     popupShown() {
       return this.$store.state.popup_shown;
     },
@@ -50,6 +77,9 @@ export default {
   },
   data () {
     return {
+      //scrollService: interpret(scrollMachine),
+      //current: scrollMachine.initialState,
+        isScrolling: null,
       popup: {
       },
       popup_shown: false
@@ -64,7 +94,7 @@ body {
   overflow-x: hidden;
   }
 
-  
+
 #app {
   padding: 60px;
   overflow-x: hidden;

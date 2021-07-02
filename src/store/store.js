@@ -10,10 +10,17 @@ export default new Vuex.Store({
       window: {
         width: 0,
         height: 0
+      },
+      scrolling: {
+        scrolled: false,
+        timestamp: 0
       }
     },
     mutations: {
 
+      SET_SCROLLING(state, scrolling) {
+        state.scrolling = scrolling;
+      },
       SET_POPUP(state, popup) {
         state.popup = popup
         state.popup_shown = true;
@@ -30,6 +37,9 @@ export default new Vuex.Store({
     },
   
     actions: {
+      setScrolling(store, scrolling) {
+        store.commit('SET_SCROLLING', scrolling);
+      },
       setWindow(store, window) {
         store.commit('SET_WINDOW', window)
       },

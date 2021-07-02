@@ -1,6 +1,14 @@
 <template>
   <div id="app">
 
+
+<!--<div class="stats">
+    wow
+{{cursorObj}}
+  </div>
+
+    <BlobCursor :cursorObj="cursorObj"/>-->
+
     <div class="overlay"></div>
     <div class="circle"></div>
     <div class="cursor">
@@ -28,12 +36,14 @@ import Dismissable from './components/Dismissable.vue'
 import Top from './components/Navs/TopNav/Top'
 //import { interpret } from 'xstate';
 //import { scrollMachine } from './states/scrollMachine';
+import BlobCursor from './components/Cursor/BlobCursor';
 
 export default {
   name: 'App',
   components: {
     Top,
-    Dismissable
+    Dismissable,
+    BlobCursor
   },
  
   created () {
@@ -43,6 +53,17 @@ export default {
         this.current = state;
       })
       .start();*/
+
+
+document.addEventListener("mousemove", this.moveCursor);
+    document.addEventListener('mouseleave', e => {
+      console.log(e);
+      this.cursorObj.hide = true;
+    });
+    document.addEventListener('mouseenter', e => {
+      console.log(e);
+      this.cursorObj.hide = false;
+    });
 
       window.addEventListener('scroll', this.handleScroll);
 
@@ -73,7 +94,16 @@ export default {
     },
     handleResize() {
             this.$store.dispatch('setWindow', { width: window.innerWidth, height: window.innerHeight});
-        }
+        },
+
+        moveCursor(e) {
+      this.cursorObj.xChild = e.clientX;
+      this.cursorObj.yChild = e.clientY;
+      setTimeout(() => {
+        this.cursorObj.xParent = e.clientX - 15;
+        this.cursorObj.yParent = e.clientY - 15;
+      }, 100);
+    }
   },
   data () {
     return {
@@ -82,13 +112,32 @@ export default {
         isScrolling: null,
       popup: {
       },
-      popup_shown: false
+      popup_shown: false,
+      cursorObj: {
+        xChild: 0,
+        yChild: 0,
+        e: null,
+        xParent: 0,
+        yParent: 0,
+        hide: false,
+        hover: false
+      }
     }
   }
 }
 </script>
 
 <style>
+
+
+.stats {
+position: fixed;
+top: 0px;
+left: 0px;
+width: 300px;
+height: 300px;
+background-color: blue;
+    }
 
 body {
   overflow-x: hidden;
@@ -97,7 +146,6 @@ body {
 
 #app {
   padding: 60px;
-  overflow-x: hidden;
   
 }
 

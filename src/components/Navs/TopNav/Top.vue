@@ -6,15 +6,15 @@
 
     <div v-if="!isMobile()" id="nav-menu">
       <div class="d-flex flex-column">
-      <router-link to="/"><span class="font-roboto">Home</span></router-link>
-      <router-link to="/projects"><span class="font-roboto">Projects</span></router-link>
-      <router-link to="/blog"><span class="font-roboto">Blog</span></router-link>
+      <router-link to="/"><span @click="play()" class="font-roboto">Home</span></router-link>
+      <router-link to="/projects"><span @click="play()" class="font-roboto">Projects</span></router-link>
+      <router-link to="/blog"><span @click="play()" class="font-roboto">Blog</span></router-link>
       </div>
 
       <div class="d-flex flex-column">
       <a @click="showPopup('http://github.com/callycodes', 'Github', 'Check out some of my other projects on my Github!')"><span class="font-roboto">Github</span></a>
       <a @click="showPopup('/CV.pdf', 'CV', 'If you have any issues with my CV, drop me a message on LinkedIn and I can provide a different format :)')"><span class="font-roboto">CV</span></a>
-      <router-link to="/contact"><span class="font-roboto">Contact</span></router-link>
+      <router-link to="/contact"><span @click="play()" class="font-roboto">Contact</span></router-link>
       </div>
 
       <div class="d-flex flex-column">
@@ -35,7 +35,19 @@
 
 <script>
 
+import { useSound } from '@vueuse/sound'
+import bubbleSound from '../../../assets/sounds/bubble_up.wav'
+
 export default {
+
+  setup() {
+    const { play } = useSound(bubbleSound, { playbackRate: 0.5} )
+
+    return {
+      play,
+    }
+  },
+
   methods: {
     isMobile() {
       return this.getWindowSize().width <= 760;

@@ -8,6 +8,7 @@ import Contact from './pages/Contact.vue'
 
 import store from './store/store.js'
 
+
 Vue.use(VueRouter)
 
 const router = new VueRouter({
@@ -58,6 +59,7 @@ router.beforeEach((to, from, next) => {
 
   if (from.name) {
     store.dispatch('setRouting', true);
+    
     setTimeout(() => {
       store.dispatch('setRouting', false);
     }, 2500);

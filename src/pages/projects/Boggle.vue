@@ -216,7 +216,6 @@ export default {
 
       for (let dice_num in dices) {
         let dice = dices[dice_num]
-        console.log(dice)
         this.letters[dice_num] = dice[Math.floor(Math.random() * dice.length)]
       }
     },

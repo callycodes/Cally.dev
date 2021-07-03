@@ -136,6 +136,7 @@ transition: all .5s;
 .font-logo {
   float: left;
   margin-right: 80px;
+  z-index: 20005;
 }
 
 #nav-menu {

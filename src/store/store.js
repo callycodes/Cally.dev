@@ -14,10 +14,13 @@ export default new Vuex.Store({
       scrolling: {
         scrolled: false,
         timestamp: 0
-      }
+      },
+      routing: false
     },
     mutations: {
-
+      SET_ROUTING(state, routing) {
+        state.routing = routing;
+      },
       SET_SCROLLING(state, scrolling) {
         state.scrolling = scrolling;
       },
@@ -37,6 +40,9 @@ export default new Vuex.Store({
     },
   
     actions: {
+      setRouting(store, routing) {
+        store.commit('SET_ROUTING', routing);
+      },
       setScrolling(store, scrolling) {
         store.commit('SET_SCROLLING', scrolling);
       },

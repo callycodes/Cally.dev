@@ -1,6 +1,15 @@
 <template>
   <div id="app">
 
+<div class="routing-animation-container" v-if="isRouting()">
+
+
+<div :style="getRandomFillStyle()" class="routing-animation-container-back"></div>
+
+  <lottie-animation :loop="false" :speed="1" :height="-1" :width="-1" 
+    path="js/page-Trans.json"
+/>
+</div>
 
 <!--<div class="stats">
     wow
@@ -26,7 +35,7 @@
 
     <transition name="fade"
         mode="out-in">
-    <router-view @show-popup="showPopup"/>
+    <router-view/>
     </transition>
   </div>
 </template>
@@ -37,13 +46,15 @@ import Top from './components/Navs/TopNav/Top'
 //import { interpret } from 'xstate';
 //import { scrollMachine } from './states/scrollMachine';
 import BlobCursor from './components/Cursor/BlobCursor';
+import LottieAnimation from "lottie-vuejs/src/LottieAnimation.vue";
 
 export default {
   name: 'App',
   components: {
     Top,
     Dismissable,
-    BlobCursor
+    BlobCursor,
+    LottieAnimation
   },
  
   created () {
@@ -56,12 +67,14 @@ export default {
 
 
 document.addEventListener("mousemove", this.moveCursor);
+    // eslint-disable-next-line no-unused-vars
     document.addEventListener('mouseleave', e => {
-      console.log(e);
+      
       this.cursorObj.hide = true;
     });
+    // eslint-disable-next-line no-unused-vars
     document.addEventListener('mouseenter', e => {
-      console.log(e);
+      
       this.cursorObj.hide = false;
     });
 
@@ -75,8 +88,15 @@ document.addEventListener("mousemove", this.moveCursor);
         window.removeEventListener('resize', this.handleResize);
     },
   methods: {
+    getRandomFillStyle() {
+      console.log('color');
+      const colours = ['#F4A261'];
+      return { 'fill': colours[Math.floor(Math.random() * colours.length)] };
+    },
+    finishRoutingAnimation() {
+      this.$store.dispatch('setRouting', false);
+      },
     handleScroll (event) {
-      console.log(event);
       this.$store.dispatch('setScrolling', { scrolled: true, timestamp: event.timestamp } );
 
       window.clearTimeout(this.isScrolling);
@@ -85,7 +105,7 @@ document.addEventListener("mousemove", this.moveCursor);
 
         if (this.$store.state.scrolling.scrolled && this.$store.state.scrolling.timestamp === event.timestamp) {
           this.$store.dispatch('setScrolling', { scrolled: false, timestamp: 0 });
-          console.log('scrolling hss ended');
+         
         }
       }, 4000);
     },
@@ -103,7 +123,11 @@ document.addEventListener("mousemove", this.moveCursor);
         this.cursorObj.xParent = e.clientX - 15;
         this.cursorObj.yParent = e.clientY - 15;
       }, 100);
-    }
+    },
+
+    isRouting() {
+      return this.$store.state.routing;
+      }
   },
   data () {
     return {
@@ -128,6 +152,110 @@ document.addEventListener("mousemove", this.moveCursor);
 </script>
 
 <style>
+
+.routing-animation-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 10000;
+  transform:scale(2.25);
+  background-color: transparent;
+  animation: router 2.5s ease-in-out;
+
+  }
+
+
+
+  .routing-animation-container-blob {
+    position: fixed;
+    width: 120%;
+    height: 120%;
+    top: 0px;
+    left: -10%;
+    animation: router-blob 2.5s;
+    z-index: 10001;
+    opacity: 0;
+
+    }
+
+  @keyframes router {
+    0% {
+      top: 0px;
+
+      }
+
+60% {
+  top: 0px;
+  }
+
+
+
+
+
+  100% {
+top: 150%;
+    }
+    }
+
+    @keyframes router-blob {
+
+    0% {
+      opacity: 0;
+      top: 0px;
+
+      }
+
+60% {
+  opacity: 0;
+  top: 0px;
+  }
+
+61% {
+  opacity: 1;
+  top: 0px;
+  }
+
+  95% {
+  opacity: 1;
+  top: 0px;
+  }
+
+
+
+  100% {
+    opacity: 1;
+top: 150%;
+    }
+    }
+
+
+  @media (max-width: 800px) {
+    .routing-animation-container {
+      transform: scale(3.5);
+      }
+    }
+
+    @media (min-width: 1300px) {
+    .routing-animation-container {
+      transform: scale(1.5);
+      }
+    }
+
+
+rect {
+  fill: var(--charcoal);
+  }
+
+
+  .routing-animation-container div svg {
+    width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+
+    }
 
 
 .stats {

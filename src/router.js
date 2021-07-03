@@ -4,6 +4,7 @@ import Home from './pages/Home.vue'
 import Boggle from './pages/projects/Boggle.vue'
 import Blog from './pages/Blog.vue'
 import Projects from './pages/Projects.vue'
+import store from './store/store.js'
 
 Vue.use(VueRouter)
 
@@ -45,6 +46,30 @@ const router = new VueRouter({
     component: () => import('../views/Settings.vue')
   } */
 })
+
+router.beforeEach((to, from, next) => {
+
+  if (from.name) {
+    store.dispatch('setRouting', true);
+    setTimeout(() => {
+      store.dispatch('setRouting', false);
+    }, 2500);
+
+    setTimeout(() => {
+      next();
+    }, 1000);
+  } else {
+    next();
+  }
+
+  
+  
+});
+
+// eslint-disable-next-line no-unused-vars
+/*router.afterEach((to, from) => {
+  store.dispatch('setRouting', false);
+});*/
 
 /* Vue Router is not meant to handle absolute urls. */
 /* So whenever we want to deal with those, we can use this.$router.absUrl(url) */

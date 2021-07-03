@@ -1,10 +1,21 @@
 <template>
   <div id="projects">
 
+<svg class="top-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <path d="M47.9,-67.7C62,-65.5,73.3,-52.1,81.1,-36.6C88.9,-21.1,93.2,-3.5,86,8.9C78.8,21.3,60,28.5,46.6,35.8C33.1,43.1,25.1,50.6,13.9,59.3C2.8,68,-11.5,78,-24.9,77.4C-38.2,76.8,-50.6,65.7,-61.1,53.2C-71.6,40.6,-80.2,26.7,-83,11.5C-85.8,-3.6,-82.7,-20,-73.4,-30.7C-64.1,-41.4,-48.6,-46.4,-35.3,-48.9C-22,-51.5,-11,-51.5,3,-56.1C16.9,-60.7,33.8,-69.8,47.9,-67.7Z" transform="translate(100 100)" />
+</svg>
+
+<svg class="bottom-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <path d="M16.1,-29.3C20.9,-21.9,25,-17.6,32.9,-11.7C40.9,-5.7,52.7,1.8,59.3,13.9C65.9,26,67.2,42.7,60.3,54.5C53.5,66.2,38.5,73.1,23.1,76.7C7.8,80.3,-8,80.6,-23.9,77.6C-39.7,74.6,-55.7,68.4,-59.1,56C-62.5,43.5,-53.2,24.9,-52.4,9.5C-51.6,-6,-59.2,-18.2,-58.8,-30.1C-58.4,-41.9,-50,-53.4,-38.9,-57.9C-27.8,-62.4,-13.9,-59.9,-4.1,-53.5C5.6,-47.1,11.2,-36.6,16.1,-29.3Z" transform="translate(100 100)" />
+</svg>
+
+<svg class="bottom-blob-outline-one" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <path d="M45.9,-79.4C59.3,-71.7,69.9,-59.1,78.3,-45C86.7,-31,93,-15.5,93.5,0.3C94,16,88.7,32.1,79.4,44.7C70.2,57.4,57,66.7,43.1,75.1C29.2,83.4,14.6,90.8,-0.6,91.8C-15.8,92.8,-31.5,87.3,-44.3,78.3C-57.1,69.4,-66.9,56.8,-74.7,43.2C-82.5,29.6,-88.2,14.8,-88.3,-0.1C-88.4,-14.9,-82.8,-29.8,-75.3,-43.8C-67.8,-57.9,-58.3,-71.2,-45.4,-79.2C-32.5,-87.2,-16.3,-90,0,-90C16.2,-89.9,32.5,-87.2,45.9,-79.4Z" transform="translate(100 100)" />
+</svg>
+
     <ProjectDetail @close="clicked = null" :project_index="clicked" v-if="clicked != null"></ProjectDetail>
 
     <div class="title-text-container">
-        <div class="d-none d-lg-block text-block"/>
         <h1 class="font-montserrat fw-900 fs-50">Projects</h1>
       </div>
 
@@ -82,6 +93,40 @@ export default {
   position: relative;
 }
 
+.top-blob {
+  z-index: -1;
+  position: absolute;
+  top:-120px;
+  left: -100px;
+  width: 600px;
+  height: 500px;
+  fill: #E3D3E4;
+  }
+
+
+  .bottom-blob {
+  z-index: -1;
+  position: absolute;
+  bottom:-120px;
+  right: -400px;
+  width: 1000px;
+  height: 800px;
+  fill: #873D48;
+  transition: all 1s;
+  }
+
+.bottom-blob-outline-one {
+z-index: -1;
+  position: absolute;
+  bottom:-350px;
+  right: -500px;
+  width: 800px;
+  height: 800px;
+  fill: transparent;
+  stroke: #DC758F;
+  stroke-width: 8px;
+  animation: grow 5s infinite ease-in-out;
+  }
 
 .text-block {
   z-index: -1;
@@ -114,6 +159,7 @@ margin-right: 0px;
   transition: transform 0.3s;
   position: relative;
   border: 1px solid black;
+
 }
 
 .projects-item:hover {
@@ -239,6 +285,24 @@ height: 100%;
 .github-icon-reveal-leave-active {
   animation: github-icon-reveal .3s reverse;
 }
+
+
+@keyframes grow {
+  0% {
+      transform: rotate(0deg);
+      }
+
+      
+
+      
+
+      100% {
+      transform: rotate(360deg);
+      }
+
+
+}
+
 @keyframes github-icon-reveal {
   0% {
     transform:translateY(20px);
@@ -282,5 +346,15 @@ height: 100%;
   }
 
 }
+
+@media (max-width: 1200px) {
+
+.bottom-blob {
+  bottom:-220px;
+  right: -600px;
+  transform: scale(0);
+  }
+
+  }
 
 </style>

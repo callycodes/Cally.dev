@@ -38,7 +38,6 @@ export default {
     }
   },
   mounted() {
-    console.log('nice' + this.data);
   }
   
 }

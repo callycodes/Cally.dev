@@ -4,6 +4,8 @@ import Home from './pages/Home.vue'
 import Boggle from './pages/projects/Boggle.vue'
 import Blog from './pages/Blog.vue'
 import Projects from './pages/Projects.vue'
+import Contact from './pages/Contact.vue'
+
 import store from './store/store.js'
 
 Vue.use(VueRouter)
@@ -26,6 +28,11 @@ const router = new VueRouter({
     path: '/projects',
     name: 'Projects',
     component: Projects
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact
   },
   {
     path: '/boggle',
